@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -385,7 +386,7 @@ main section .course {
 main section .course .title {
   font-weight: bold;
   text-transform: uppercase;
-  color: #509e98;
+  color: #c01717;
   flex: 0 0 33.3%;
   max-width: 33%;
 }
@@ -395,6 +396,28 @@ main section .course .descrition {
 }
 main section .course .descrition p {
   padding-left: 1em;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills .column {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.skills .column ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.skills .column ul li {
+  padding-left: 1.5em;
+}
+.skills .column ul li::before {
+  content: '►';
+  padding-right: .5em;
+  color: #c01717;
 }
 
 /*# sourceMappingURL=main.css.map */
