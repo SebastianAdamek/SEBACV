@@ -32,3 +32,44 @@ header {
   }
   
 }
+
+
+main{
+  section{ 
+    margin: 1em;
+    padding: 1em;
+    @include center-block;
+    max-width: 1200px;
+    border-bottom: 1px solid #444;
+    
+    h4,h3{
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .course {
+        display: flex;
+        flex-wrap: wrap;
+      
+      .title {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #509e98;
+        flex: 0 0 33.3%;
+        max-width: 33%;
+      }
+      
+      .descrition {
+        flex: 0 0 66.6%;
+        max-width: 66.6%;
+        
+        p {
+          padding-left: 1em;
+        }
+      }
+      
+      
+      
+    }
+  }
+}
