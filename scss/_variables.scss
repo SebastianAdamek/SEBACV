@@ -1,4 +1,21 @@
+//@media
+
+$breakpoints: (  
+  'small' : 576px,
+  'medium' : 768px,
+  'large'  : 992px,
+  'xlarge' : 1200px
+);
+
 //colors
 $white : #ffffff;
 $black : #000000;
-$color-brand: darken(lightcoral, 30%);
+$color-border: lighten(#888, 20%);
+$color-brand: darken(lightcoral, 10%);
+
+
+$border-main: 1px solid $color-border;
+
+//size
+$max-width: 1000px;
+$padding-indent: 3em;

@@ -1,0 +1,31 @@
+body {
+  font-size: 16px;
+  line-height: 1.8em;
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h4, h3{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+
+  li{
+    @include li-view;
+  }
+}
+
+
+a{
+  text-decoration: none;
+  color: darken($color-brand, 40%);
+  
+  &:hover{
+    color: darken($color-brand,10%);
+  }
+}

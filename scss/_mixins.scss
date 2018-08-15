@@ -8,3 +8,32 @@
   width: $width;
   height: $height;
 }
+
+@mixin li-view($style: '►'){
+    padding-left: 1.5em;
+    &::before{
+      content: $style;
+      padding-right: .5em;
+      color: $color-brand;
+    }
+  @content;
+}
+
+@mixin abs-pos($top, $right:$top, $bottom: $top, $left:$top){
+  position: absolute;
+  top:$top; 
+  right:$right; 
+  bottom:$bottom;  
+  left:$left; 
+}
+
+@mixin respond-to($breakpoint){
+  @media screen and (max-width: map-get($breakpoints,$breakpoint)){
+    @content;
+  }
+}
+
+@mixin flex(){
+  display: flex;
+  flex-wrap: wrap;
+}

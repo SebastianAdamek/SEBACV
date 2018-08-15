@@ -1,30 +1,37 @@
-body {
-  font-size: 16px;
-  line-height: 1.8em;
-  font-family: sans-serif;
-  font-family: 'Roboto', sans-serif;
-}
-
-header {
-  background-size: cover;
-  background-image: url("../img/bg.jpg");
+.blur {
+  @include abs-pos(-10px);
+  background-image: url("../img/bgc.jpg");
   background-position: fixed;
+  background-size: cover;
+  filter: blur(5px);
+}
+//Header
+header {
+  position: relative;
+  background-size: cover;
+  background-image: url("../img/bgc.jpg");
+  background-position: center;
   color: $white;
-  padding: 2em;
+  text-shadow: 1px 0px 5px black,
+               1px 2px 5px black,
+               1px 4px 5px black;
+  padding: $padding-indent;
   text-align: center;
   
   img {
     @include center-block;
     @include box-size(150px);
+    position: relative;
     border-radius: 50%;
   }
   
   h1{
-    text-transform: uppercase;
+    position: relative;
     margin: 1em 0;
   }
   
   section{
+    position: relative;
     @include center-block;
     max-width: 740px;
     padding: 0.5em;
@@ -34,65 +41,134 @@ header {
 }
 
 
-main{
-  section{ 
-    margin: 1em;
-    padding: 1em;
-    @include center-block;
-    max-width: 1200px;
-    border-bottom: 1px solid #444;
-    
-    h4,h3{
-      text-transform: uppercase;
-      font-weight: bold;
+//main section
+section{ 
+  margin: 1em;
+  padding: 1em;
+  @include center-block;
+  max-width: $max-width;
+  border-bottom: $border-main;
+  &:last-child{
+    border: none;
+  }
+  
+  h3{
+    @include respond-to(medium){
+      text-align: center;
     }
+  }
+}
+//componetn course
+.course {
+    display: flex;
+    flex-wrap: wrap;
     
-    .course {
-        display: flex;
-        flex-wrap: wrap;
-      
-      .title {
-        font-weight: bold;
-        text-transform: uppercase;
-        color: $color-brand;
-        flex: 0 0 33.3%;
-        max-width: 33%;
-      }
-      
-      .descrition {
-        flex: 0 0 66.6%;
-        max-width: 66.6%;
-        
-        p {
-          padding-left: 1em;
-        }
-      }
-      
+  .title {
+    padding-top: 1em;
+    font-weight: bold;
+    color: $color-brand;
+    flex: 0 0 33.3%;
+  }
+
+  .descrition {
+    flex: 0 0 66.6%;
+
+    p {
+      padding-left: 1em;
     }
+  }
+  
+  hr {
+    flex: 0 0 100%;
+    max-width: 10%;
+    color: lighten($color-border, 30%);
+    padding: 0;
+    margin: 4px auto;
+  }
+
+  @include respond-to(medium){
+    display: block;
+    text-align: center;
+    width: 90%;
   }
 }
 
 .skills {
-  display: flex;
-  flex-wrap: wrap;
+  @include flex;
+  padding-left: $padding-indent;
   
   .column {
     flex: 0 0 50%;
-    max-width: 50%;
     
-    ul{
-      list-style-type: none;
-      margin: 0px;
-      padding: 0px;
+    h4{
+      text-transform: none;
+      font-weight: 700;
+    }
+    @include respond-to(small){
+      flex: 0 0 100%;
+    }
+    
+  }
+}
+
+
+.education{
+  article{
+    padding-left: $padding-indent;
+    line-height: 1.8em;
+    margin-top: 0.5em;
+    
+    .school {
+      font-weight: bold;
       
-      li{
-        padding-left: 1.5em;
-        &::before{
-          content: '►';
-          padding-right: .5em;
-          color: $color-brand;
+      span{
+        font-weight: 400;
+        color: darken($white, 40%);
+        text-decoration: underline;
+      }
+    }
+    .descrition {
+      padding-left: 5em;
+    }
+  }
+}
+
+.experience {
+    padding-bottom: 2em;
+  article{
+    padding-left: $padding-indent;
+    margin-top: 2em;
+    .company {
+      span {
+        font-weight: 400;
+        color: darken($white, 40%);
+        text-decoration: underline;
+      }
+    }
+
+    .description {
+      ul {
+        li {
+          @include li-view('✔');
         }
       }
     }
   }
+}
+
+footer {
+  text-align: right;
+  color: $white;
+  background-color: lighten($color-brand, 10%);
+  padding: 1em 1.5em;
+  
+  @include respond-to(medium){
+    text-align: center;
+  }
+}
+
+//helpers
+.dashed-none {
+  list-style-type: none;
+  padding-left: none;
 }
