@@ -360,9 +360,28 @@ ul li::before {
 a {
   text-decoration: none;
   color: #650c0c;
+  transition: all 0.1s linear;
 }
 a:hover {
   color: #e52525;
+}
+
+a.menu {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.3em;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  line-height: 1.3em;
+  margin: auto 5px;
+  transition: all 0.1s linear;
+}
+a.menu:hover {
+  color: #cccccc;
+  transform: scale(1.1);
 }
 
 .blur {
@@ -407,6 +426,9 @@ header section {
   display: block;
   max-width: 740px;
   padding: 0.5em;
+}
+header .link {
+  font-size: 1.5em;
 }
 
 section {
